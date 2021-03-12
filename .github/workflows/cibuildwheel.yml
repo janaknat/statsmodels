@@ -47,7 +47,7 @@ jobs:
           CIBW_BEFORE_BUILD: pip install numpy==1.19.3
           CIBW_ARCHS: ${{ matrix.cibw_archs }}
           CIBW_TEST_REQUIRES: pytest
-          CIBW_TEST_COMMAND: python -c 'import statsmodels; statsmodels.test(extra_args=["--skip-slow", "--skip-examples", "-n 2"], exit=True)'
+          CIBW_TEST_COMMAND: python -c "import statsmodels;statsmodels.test(extra_args=['--skip-slow', '--skip-examples', '-n 2'], exit=True)"
 
       - name: Build wheels for CPython
         run: |
@@ -57,7 +57,7 @@ jobs:
           CIBW_BEFORE_BUILD: pip install numpy==1.19.3
           CIBW_ARCHS: ${{ matrix.cibw_archs }}
           CIBW_TEST_REQUIRES: pytest
-          CIBW_TEST_COMMAND: python -c 'import statsmodels; statsmodels.test(extra_args=["--skip-slow", "--skip-examples", "-n 2"], exit=True)'
+          CIBW_TEST_COMMAND: python -c "import statsmodels;statsmodels.test(extra_args=['--skip-slow', '--skip-examples', '-n 2'], exit=True)"
 
           #- uses: actions/upload-artifact@v2
           #with:
